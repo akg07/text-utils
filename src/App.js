@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 import Navbar from './components/Navbar'
 import TextForm from './components/TextForm'
 import Alert from './components/Alert';
-// import About from './components/About'
-// import {
-//     BrowserRouter as Router,
-//     Routes,
-//     Route
-// } from "react-router-dom";
+import About from './components/About'
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route
+} from "react-router-dom";
 
 export default function App() {
 
@@ -41,18 +41,17 @@ export default function App() {
     return (
         <>
             {/* adding props here ex: title */}
-            {/* <Router> */}
+            <Router>
                 <Navbar title="Text Utils" mode={mode} toggleMode={toggleMode} /> 
                 <Alert alert={alert} />
                 <div className="container my-3">
-                    {/* <Routes> */}
+                    <Routes>
                         {/* exact -> matching exact path */}
-                        {/* <Route exact path="/" element={ <TextForm heading="Enter The Text to analyze below" mode={mode} showAlert={showAlert} /> } /> */}
-                        <TextForm heading="Enter The Text to analyze below" mode={mode} showAlert={showAlert} />
-                        {/* <Route exact path='/about' element={ <About /> } /> */}
-                    {/* </Routes> */}
+                        <Route exact path="/" element={ <TextForm heading="Enter The Text to analyze below" mode={mode} showAlert={showAlert} /> } />
+                        <Route exact path='/about' element={ <About /> } />
+                    </Routes>
                 </div>
-            {/* </Router> */}
+            </Router>
         </>
     )
 }

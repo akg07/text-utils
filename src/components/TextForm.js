@@ -34,12 +34,12 @@ export default function TextForm(props) {
                 <textarea className="form-control" id="myBox" rows="8" value={text} onChange={handleOnChange} style={ {backgroundColor: props.mode === 'dark' ? 'grey' : 'white', color: props.mode === 'dark' ? 'white' : 'black'} } ></textarea>
             </div>
 
-            <button className="btn btn-primary mx-1" onClick={handleUpClick}>Convert to Upper Case</button>
-            <button className="btn btn-primary" onClick={handleLoClick}>Convert to Lower Case</button>
+            <button className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>Convert to Upper Case</button>
+            <button className="btn btn-primary mx-1 my-1" onClick={handleLoClick}>Convert to Lower Case</button>
         </div>
         <div className="container my-3" style={ {color: props.mode === 'dark' ? 'white' : 'black'} }> 
             <h1>Your Text summary</h1>
-            <p> {text.split(" ").length} words & {text.length} charaters</p>
+            <p> {text.split(" ").filter((ele) => {return ele.length > 0}).length} words & {text.length} charaters</p>
             <p> {0.008 * text.split(" ").length} Minutes Read</p>
 
             <h2>Preview</h2>
